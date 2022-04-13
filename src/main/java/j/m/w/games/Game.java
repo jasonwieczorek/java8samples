@@ -11,6 +11,8 @@ public class Game {
     private Double cost;
     private LocalDate releasedDate;
 
+    public Game() {}
+
     public Game(String title, Double cost, LocalDate releasedDate) {
         this.title = title;
         this.cost = cost;
@@ -39,5 +41,14 @@ public class Game {
 
     public void setReleasedDate(LocalDate releasedDate) {
         this.releasedDate = releasedDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Game{" +
+                "title='" + title + '\'' +
+                ", cost=" + String.format("%.2f", cost) +
+                ", releasedDate=" + releasedDate +
+                '}';
     }
 }
