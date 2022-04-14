@@ -21,4 +21,10 @@ public class LogConsumer {
     public static void log(String loggerName, String message) {
         loggerConsumer.accept(loggerName, message);
     }
+
+    public static void log(String message) {
+        loggerConsumer.accept("ApplicationLogger", message);
+    }
+
+
 }

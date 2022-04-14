@@ -9,7 +9,11 @@ public class TestProgram {
 
     public static void main(String args[]) {
 
-        LogConsumer.log("ApplicationLogger", "im a message");
+        LogConsumer.log( "im a message");
+        LogConsumer.log( "im a message");
+        LogConsumer.log( "im a message");
+        LogConsumer.log( "im a message");
+
         LogConsumer.log("org.apache.logging.log4j.test2", "im a message");
 
     }
