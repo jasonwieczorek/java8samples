@@ -47,7 +47,7 @@ public class Game {
     public String toString() {
         return "Game{" +
                 "title='" + title + '\'' +
-                ", cost=" + String.format("%.2f", cost) +
+                ", cost=" + cost +
                 ", releasedDate=" + releasedDate +
                 '}';
     }
