@@ -23,8 +23,6 @@ public class LogConsumer {
     }
 
     public static void log(String message) {
-        loggerConsumer.accept("ApplicationLogger", message);
+        loggerConsumer.accept("FileLogger", message);
     }
-
-
 }

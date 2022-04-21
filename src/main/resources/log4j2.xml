@@ -3,7 +3,7 @@
 
     <!-- Properties -->
     <Properties>
-        <Property name="filename">target/test.log</Property>
+        <Property name="ApplicationLog">target/Application.log</Property>
     </Properties>
 
     <!-- Context-wide filter, we could use this to stop certain levels of logging from happening everywhere -->
@@ -25,7 +25,7 @@
                 <Filter type="MarkerFilter" marker="EXCEPTION" onMatch="ACCEPT" onMismatch="DENY"/>
             </Filters>
         </Appender>
-        <Appender type="File" name="File" fileName="${filename}">
+        <Appender type="File" name="File" fileName="${ApplicationLog}">
             <Layout type="PatternLayout">
                 <Pattern>%d %p %C{1.} [%t] %m%n</Pattern>
             </Layout>
@@ -34,11 +34,11 @@
 
     <!-- Loggers -->
     <Loggers>
-        <Logger name="ApplicationLogger" level="debug" additivity="false">
+        <Logger name="ConsoleLogger" level="debug" additivity="false">
             <AppenderRef ref="STDOUT"/>
         </Logger>
 
-        <Logger name="org.apache.logging.log4j.test2" level="debug" additivity="false">
+        <Logger name="FileLogger" level="debug" additivity="false">
             <AppenderRef ref="File"/>
         </Logger>
 
