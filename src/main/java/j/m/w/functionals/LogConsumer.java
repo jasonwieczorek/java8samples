@@ -5,7 +5,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 /**
  * A simple consumer that can consume logs in a standardized way

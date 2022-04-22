@@ -1,6 +1,7 @@
 package j.m.w.games;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * A simple video game object.
@@ -44,6 +45,23 @@ public class Game {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Game game = (Game) o;
+        return Objects.equals(title, game.title) && Objects.equals(cost, game.cost) && Objects.equals(releasedDate, game.releasedDate);
+    }
+
+    public boolean test(Game game) {
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, cost, releasedDate);
+    }
+
+    @Override
     public String toString() {
         return "Game{" +
                 "title='" + title + '\'' +
@@ -51,4 +69,6 @@ public class Game {
                 ", releasedDate=" + releasedDate +
                 '}';
     }
+
+
 }
