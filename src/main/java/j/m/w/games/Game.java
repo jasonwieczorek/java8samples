@@ -12,7 +12,7 @@ public class Game {
     private Double cost;
     private LocalDate releasedDate;
 
-    public Game() {}
+    private Game() {}
 
     public Game(String title, Double cost, LocalDate releasedDate) {
         this.title = title;
