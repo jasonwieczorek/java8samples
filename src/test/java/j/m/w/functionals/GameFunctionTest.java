@@ -16,4 +16,12 @@ public class GameFunctionTest {
 
         Assertions.assertEquals(expectedDiscount, game.getCost());
     }
+
+    @Test
+    public void testCostToString() {
+        Game game = RandomGameSupplier.createNewGame();
+        String expectedString = game.getCost().toString();
+        
+        Assertions.assertEquals(expectedString, GameFunction.costToString.apply(game));
+    }
 }

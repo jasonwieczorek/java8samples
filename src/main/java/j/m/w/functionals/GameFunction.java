@@ -16,6 +16,11 @@ public class GameFunction {
         return game1;
     };
 
+    // turns the price of a game into a String (using explicit syntax)
+    public static Function<Game, String> costToString = (game) -> {
+        return game.getCost().toString();
+    };
+
     public static Game discountGame(Game game, Double percent) throws IllegalArgumentException{
 
        if (percent >= 1 || percent <= 0) {

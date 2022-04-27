@@ -13,7 +13,6 @@ public class GamePredicate {
     // This is equivelent to the above line, and uses context reference to infer what it will do, in this case, g1.equals(g2)
     private static BiPredicate<Game, Game> isEqualWithMethodRef = Game::equals;
 
-
     public static boolean isEqual(Game game1, Game game2) {
 
         return isEqual.test(game1, game2);
