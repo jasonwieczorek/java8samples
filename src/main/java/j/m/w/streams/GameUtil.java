@@ -5,6 +5,7 @@ import j.m.w.games.Game;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class GameUtil {
 
@@ -37,4 +38,39 @@ public class GameUtil {
         return games.stream().max(Comparator.comparing(Game::getCost));
     }
 
+    public static Optional<Game> findFirstGame(List<Game> games) {
+
+       if (games == null) {
+           return Optional.empty();
+       }
+
+       return games.stream().findFirst();
+    }
+
+    public static boolean doAllGamesMatch(List<Game> games, Predicate<Game> predicate) {
+
+       if (games == null) {
+          return false;
+       }
+
+       return games.stream().allMatch(predicate);
+    }
+
+    public static boolean doAnyGamesMatch(List<Game> games, Predicate<Game> predicate) {
+
+        if (games == null) {
+            return false;
+        }
+
+        return games.stream().anyMatch(predicate);
+    }
+
+    public static boolean doNoGamesMatch(List<Game> games, Predicate<Game> predicate) {
+
+        if (games == null) {
+            return false;
+        }
+
+        return games.stream().noneMatch(predicate);
+    }
 }
