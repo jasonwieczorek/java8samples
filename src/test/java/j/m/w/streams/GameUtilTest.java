@@ -33,15 +33,41 @@ public class GameUtilTest {
     }
 
     @Test
+    public void testGetCheapestGameDuplicateValuesReturnsFirstItemFromList() {
+
+        Game game1 = new Game("game1", 10.00, LocalDate.now());
+        Game game2 = new Game("game2", 10.00, LocalDate.now());
+        Game game3 = new Game("game3", 10.00, LocalDate.now());
+
+        List<Game> games = Arrays.asList(game2, game3, game1);
+
+        Optional<Game> cheapestGame = GameUtil.getCheapestGame(games);
+        Assertions.assertEquals(game2, cheapestGame.get());
+    }
+
+    @Test
     public void testMostExpensiveGame() {
 
         Game game1 = new Game("game1", 10.00, LocalDate.now());
         Game game2 = new Game("game2", 20.00, LocalDate.now());
         Game game3 = new Game("game3", 5.00, LocalDate.now());
 
-        List<Game> games = Arrays.asList(game1, game2, game3);
+        List<Game> games = Arrays.asList(game3, game2, game1);
 
         Optional<Game> cheapestGame = GameUtil.getMostExpensiveGame(games);
         Assertions.assertEquals(game2, cheapestGame.get());
+    }
+
+    @Test
+    public void testMostExpensiveGameDuplicateValuesReturnsFirstItemFromList() {
+
+        Game game1 = new Game("game1", 20.00, LocalDate.now());
+        Game game2 = new Game("game2", 20.00, LocalDate.now());
+        Game game3 = new Game("game3", 20.00, LocalDate.now());
+
+        List<Game> games = Arrays.asList(game1, game2, game3);
+
+        Optional<Game> cheapestGame = GameUtil.getMostExpensiveGame(games);
+        Assertions.assertEquals(game1, cheapestGame.get());
     }
 }
